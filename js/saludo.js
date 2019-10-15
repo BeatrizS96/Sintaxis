@@ -1,4 +1,5 @@
-alert("Hola mundo");
+var saludo="Hola mundo\nQué fácil es incluir 'comillas simples'\ny \"comillas dobles\"";
+alert(saludo);
 //confirm("Mensaje con confirmación");
 //prompt("¿Cuál es tu nombre?");
 document.write("Usando método write");
