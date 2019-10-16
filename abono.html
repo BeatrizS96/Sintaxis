@@ -1,0 +1,44 @@
+<script>
+    var edad,emp;
+    edad=prompt("Introduce tu edad");
+    emp=prompt("¿Estas empadronado? S/N");
+
+    if (emp=="S")
+    {
+        if (edad<16)
+        {
+            document.write("El abono son ",60-(60*(0.20+0.10)));
+        }
+        else if (edad<18 && edad>16)
+        {
+            document.write("El abono son ",60-(60*(0.15+0.05)));
+        }
+        else if (edad>18 && edad<65)
+        {
+            document.write("El abono son ",60-(60*(0+0.05)));
+        }
+        else if (edad>65)
+        {
+            document.write("El abono son ",60-(60*(0.50+0.10)));
+        }
+    }
+    else
+    {
+        if (edad<16)
+        {
+            document.write("El abono son ",60-(60*0.20));
+        }
+        else if (edad<18 && edad>16)
+        {
+            document.write("El abono son ",60-(60*0.15));
+        }
+        else if (edad>18 && edad<65)
+        {
+            document.write("El abono son ",60-(60*0));
+        }
+        else if (edad>65)
+        {
+            document.write("El abono son ",60-(60*0.50));
+        }
+    }
+</script>
