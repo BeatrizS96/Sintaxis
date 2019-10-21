@@ -1,0 +1,42 @@
+<html>
+    <body>
+        <head>
+            <meta charset="UTF-8">
+            <title>Ejercicio 1</title>
+        </head>
+        <script>
+            var tipo= window.prompt("¿Qué topping quieres?");
+           /* document.write("Opción 1: Helado sin topping");
+            document.write("Opción 2: Topping de oreo");
+            document.write("Opción 3: Topping de kitkat");
+            document.write("Opción 4: Topping de brownie");
+            document.write("Opción 5: Topping de lacasitos");*/
+            switch (tipo)
+            {
+                case "sin":
+                    document.write("Helado sin topping: 1,90€");
+                break;
+
+                case "oreo":
+                    document.write("Topping de oreo: 1€");
+                break;
+
+                case "kitkat":
+                    document.write("Topping de kitkat: 1€");
+                break;
+
+                case "brownie":
+                    document.write("Topping de brownie: 1€");
+                break;
+
+                case "lacasitos":
+                    document.write("Topping de lacasitost: 1€");
+                break;
+
+                default:
+                    document.write("No tenemos este topping, lo sentimos.");
+                break
+            }
+        </script>
+    </body>
+</html>
