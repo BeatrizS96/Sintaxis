@@ -1,0 +1,70 @@
+<html>
+    <body>
+        <head>
+            <meta charset="UTF-8">
+            <title>Ejercicio 3</title>
+        </head>
+            <script>
+                 var num=parseInt(window.prompt("Introduce un número:"));
+                 //var cadena=window.prompt("Introduce una cadena:")
+
+                function parImpar(num)
+                {
+                    if (num%2==0)
+                    {
+                        document.write("El número es par");
+                    }
+                    else
+                    {
+                        document.write("El número es impar");
+                    }
+                }
+
+                function primo (num)
+                {
+                    var primo;
+                    for (var i=2; i<=num; i++)
+                    {
+                        primo=true;
+                        for(var j=2;j<i;j++)
+                        {
+                            if (i%j === 0)
+                            {
+                                primo=false;
+                            }
+                        }
+                        if (primo)
+                        {
+                            document.write("El número ",i," es primo<br>");
+                        }
+                    }
+                }
+
+                function info (cadena)
+                {
+                    var resultado="La cadena \""+cadena+"\" ";
+
+                    if(cadena==cadena.toUpperCase())
+                    {
+                        resultado+=" está formada sólo por mayusculas";
+                    }
+                    else if(cadena==cadena.toLowerCase())
+                    {
+                        resultado+=" está formada sólo por minúsculas";
+                    }
+                    else
+                    {
+                        resultado+=" está formada por mayúsculas y minúsculas";
+                    }
+                    return resultado;
+
+                }
+
+                parImpar(num);
+                document.write('<br>');
+                primo(num);
+                document.write('<br>');
+               // info(cadena);
+            </script>
+    </body>
+</html>
