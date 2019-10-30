@@ -1,0 +1,82 @@
+</<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <title>Ejercicio 16: Expresiones regulares </title>
+</head>
+
+<body>
+  <h1>Ejercicio 16: Expresiones regulares</h1>
+  <form action="">
+        Introduce un texto: <input type="text" id="texto"/>
+        <input type="button" name="Validar" value="Valid" onclick="ValidDescripcion();">
+        <br>
+        <p id="resulD"></p>
+        <br>
+        Introduce un número de teléfono: <input type="text" id="telf"/>
+        <input type="button" name="Validar" value="Valid" onclick="ValidTelf();">
+        <br>
+        <p id="resulT"></p>
+        <br>
+        Introduce un número de teléfono con prefijo: <input type="text" id="telfP"/>
+        <input type="button" name="Validar" value="Valid" onclick="ValidTelfPref();">
+        <br>
+        <p id="resulTP"></p>
+        <br>
+  </form>
+
+
+
+  <script>
+
+      function ValidDescripcion()
+      {
+        var texto = document.getElementById ("texto");
+        var resultado = document.getElementById ("resulD");
+        var exp = /^[A-Z].*\.$/;
+        if(exp.test(texto)===true)
+        {
+            resultado.innerHTML ="El texto introducido es correcto";
+        }
+        else
+        {
+            resultado.innerHTML ="El texto introducido NO es correcto";
+        }
+      }
+
+      function ValidTelf()
+      {
+        var telf = document.getElementById ("telf");
+        var resultado = document.getElementById ("resulT");
+        var exp=/^9[0-9]{8}$/;
+        if(exp.test(telf)===true)
+        {
+            resultado.innerHTML ="El teléfono introducido es correcto";
+        }
+        else
+        {
+            resultado.innerHTML ="El teléfono introducido NO es correcto";
+        }
+      }
+
+      function ValidTelfPref()
+      {
+        var telfP = document.getElementById ("telfP");
+        var resultado = document.getElementById ("resulTP");
+        var exp=/^\(\+34\)9\d{8}$/;
+        if(exp.test(telfP)===true)
+        {
+            resultado.innerHTML ="El teléfono introducido es correcto";
+        }
+        else
+        {
+            resultado.innerHTML ="El teléfono introducido NO es correcto";
+        }
+      }
+
+  </script>
+
+</body>
+</html>
