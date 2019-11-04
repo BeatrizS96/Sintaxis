@@ -1,4 +1,4 @@
-</<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -16,18 +16,56 @@
         <p id="resulD"></p>
         <br>
         Introduce un número de teléfono: <input type="text" id="telf"/>
-        <input type="button" name="Validar" value="Valid" onclick="ValidTelf();">
+        <input type="button" name="Validar" value="Validar" onclick="ValidTelf();">
         <br>
         <p id="resulT"></p>
         <br>
         Introduce un número de teléfono con prefijo: <input type="text" id="telfP"/>
-        <input type="button" name="Validar" value="Valid" onclick="ValidTelfPref();">
+        <input type="button" name="Validar" value="Validar" onclick="ValidTelfPref();">
         <br>
         <p id="resulTP"></p>
         <br>
+        Introduce la fecha de incidencia: <input type="datetime" id="fecha">
+        <input type="button" name="Validar" value="Validar" onclick="FechaIn();">
+        <br>
+        <p id="resulF"></p>
+        <br>
+        Introduce el código postal: <input type="text" id="codPostal">
+        <input type="button" name="Validar" value="Validar" onclick="CP();">
+        <br>
+        <p id="resulCP"></p>
+        <br>
+        Introduce tu correo electrónico: <input type="text" id="correo">
+        <input type="button" name="Validar" value="Validar" onclick="Correo();">
+        <br>
+        <p id="resulCor"></p>
+        <br>
+        Introduce el importe: <input type="text" id="importe">
+        <input type="button" name="Validar" value="Validar" onclick="Importe();">
+        <br>
+        <p id="resulIm"></p>
+        <br>
+        Introduce tus datos bancarios: <input type="text" id="datos">
+        <input type="button" name="Validar" value="Validar" onclick="DatosB();">
+        <br>
+        <p id="resulDB"></p>
+        <br>
+        Introduce el nombre de la página: <input type="text" id="pag">
+        <input type="button" name="Validar" value="Validar" onclick="Pagina();">
+        <br>
+        <p id="resulPag"></p>
+        <br>
+        Introduce la URL: <input type="text" id="url">
+        <input type="button" name="Validar" value="Validar" onclick="Web();">
+        <br>
+        <p id="resulW"></p>
+        <br>
+        Introduce la URL con parámetros: <input type="text" id="urlP">
+        <input type="button" name="Validar" value="Validar" onclick="WebComp();">
+        <br>
+        <p id="resulWC"></p>
+        <br>
   </form>
-
-
 
   <script>
 
@@ -36,7 +74,7 @@
         var texto = document.getElementById ("texto");
         var resultado = document.getElementById ("resulD");
         var exp = /^[A-Z].*\.$/;
-        if(exp.test(texto)===true)
+        if(exp.test(texto.value)===true)
         {
             resultado.innerHTML ="El texto introducido es correcto";
         }
@@ -51,7 +89,7 @@
         var telf = document.getElementById ("telf");
         var resultado = document.getElementById ("resulT");
         var exp=/^9[0-9]{8}$/;
-        if(exp.test(telf)===true)
+        if(exp.test(telf.value)===true)
         {
             resultado.innerHTML ="El teléfono introducido es correcto";
         }
@@ -66,7 +104,7 @@
         var telfP = document.getElementById ("telfP");
         var resultado = document.getElementById ("resulTP");
         var exp=/^\(\+34\)9\d{8}$/;
-        if(exp.test(telfP)===true)
+        if(exp.test(telfP.value)===true)
         {
             resultado.innerHTML ="El teléfono introducido es correcto";
         }
@@ -77,7 +115,115 @@
       }
       function FechaIn()
       {
-
+        var fechaIn = document.getElementById ("fecha");
+        var resultado = document.getElementById ("resulF");
+        var exp=/^(0[1-9]|[12\d]|3[01])\/(0[1-9]|1[012])\/\d{4}\s([01]\d|2[0-3])\:[0-5]\d$/;
+        if(exp.test(fechaIn.value)===true)
+        {
+            resultado.innerHTML ="La fecha introducida es correcta";
+        }
+        else
+        {
+            resultado.innerHTML ="El fecha introducida NO es correcta";
+        }
+      }
+      function CP()
+      {
+        var cod = document.getElementById ("codPostal");
+        var resultado = document.getElementById ("resulCP");
+        var exp=/(^([0-9]{5,5})|^)$/;
+        if(exp.test(cod.value)===true)
+        {
+            resultado.innerHTML ="El código postal introducido es correcto";
+        }
+        else
+        {
+            resultado.innerHTML ="El código postal introducido NO es correcto";
+        }
+      }
+      function Correo()
+      {
+        var correo = document.getElementById ("correo");
+        var resultado = document.getElementById ("resulCor");
+        var exp=/^\w+\@\w+\.[a-zA-Z]{2,3}$/;
+        if(exp.test(correo.value)===true)
+        {
+            resultado.innerHTML ="El correo introducido es correcto";
+        }
+        else
+        {
+            resultado.innerHTML ="El correo introducido NO es correcto";
+        }
+      }
+      function Importe()
+      {
+        var impor = document.getElementById ("importe");
+        var resultado = document.getElementById ("resulIm");
+        var exp=/^(\-?)\d+([.,]\d+)?$/;
+        if(exp.test(impor.value)===true)
+        {
+            resultado.innerHTML ="El importe introducido es correcto";
+        }
+        else
+        {
+            resultado.innerHTML ="El importe introducido NO es correcto";
+        }
+      }
+      function DatosB()
+      {
+        var datosB = document.getElementById ("datos");
+        var resultado = document.getElementById ("resulDB");
+        var exp=/^\d{4}\s\d{4}\s\d{2}\s\d{10}$/;
+        if(exp.test(datosB.value)===true)
+        {
+            resultado.innerHTML ="Los datos bancarios introducidos son correctos";
+        }
+        else
+        {
+            resultado.innerHTML ="Los datos bancarios introducidos NO son correctos";
+        }
+      }
+      function Pagina()
+      {
+        var pagin = document.getElementById ("pag");
+        var resultado = document.getElementById ("resulPag");
+        var exp=/^www\.\w+\.[a-zA-Z]{2,3}$/;
+        if(exp.test(pagin.value)===true)
+        {
+            resultado.innerHTML ="La página introducida es correcta";
+        }
+        else
+        {
+            resultado.innerHTML ="La página introducida NO es correcta";
+        }
+      }
+      function Web()
+      {
+        var web = document.getElementById ("url");
+        var resultado = document.getElementById ("resulW");
+        var exp=/^http[s]?\:\/\/www\.\w+\.[a-zA-Z]{2,3}\:\d{1-5}$/;
+        if(exp.test(web.value)===true)
+        {
+            resultado.innerHTML ="La URL introducida es correcta";
+        }
+        else
+        {
+            resultado.innerHTML ="La URL introducida NO es correcta";
+        }
+      }
+      function WebComp()
+      {
+        var webC = document.getElementById ("urlP");
+        var resultado = document.getElementById ("resulWC");
+        var exp=/^http[s]?\:\/\/www\.\w+\.[a-zA-Z]{2,3}\:\d{1-5}\?(\w+=\w+)(\&\w+=\w+)*$/;
+        if(exp.test(webC.value)===true)
+        {
+            resultado.innerHTML ="La URL con parámetros introducida es correcta";
+        }
+        else
+        {
+            resultado.innerHTML ="La URL con parámetros introducida NO es correcta";
+        }
       }
 
   </script>
